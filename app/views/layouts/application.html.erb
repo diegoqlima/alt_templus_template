@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  	<title><%=Templus.nome_aplicacao%> | <%=Templus.nome_empresa%> </title>
+  	<%= favicon_link_tag Templus.favicon %>
+  	<!-- Main css styles -->
+  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  	<!-- Main javascript files -->
+  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	<%= csrf_meta_tags %>
+  
+    <!-- Bootstrap 3.3.5 -->
+    <!-- <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css"> -->
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+    <!-- Ionicons -->
+    <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
+    <!-- Theme style -->
+    <!-- <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css"> -->
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <!-- <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css"> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="hold-transition skin-blue fixed sidebar-mini">
+  	<!-- Skin configuration box -->
+  	<!-- Wrapper-->
+  	<div class="wrapper <%= params[:controller] %>.<%= params[:action] %>">
+  		<!-- Navigation -->
+  		<%= render 'layouts/topnavbar' %>
+      
+      <%= render 'layouts/menu' %>
+      
+      <div class="content-wrapper <%= @extra_class %>">
+        <%= flash_messages_for %>
+        
+        <%= yield %>
+      </div>
+      
+      <%= render 'layouts/footer' %>
+  	</div>
+    
+  	<%= yield :javascript %>
+  </body>
+</html>

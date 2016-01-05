@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title><%=Templus.nome_aplicacao%> | <%=Templus.nome_empresa%> </title>
+</head>
+<body>
+	<table width="600" cellspacing="0" cellpadding="10" align="center">
+		<tbody>
+			<tr>
+				<td><%=Templus.nome_aplicacao%></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table width="600" cellspacing="10" cellpadding="0" bgcolor="#fafafa" align="center">
+		<tbody>
+			<tr>
+				<td align="left">
+					Sua conta foi bloqueada por excesso de tentativa de login.
+					<br><br>
+					Clique no link abaixo para desbloquear sua conta<br><br>
+					<%= link_to 'Desbloquear sua conta', unlock_url(@resource, unlock_token: @token) %>
+					<br><br>
+				</span>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

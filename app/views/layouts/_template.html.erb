@@ -1,0 +1,27 @@
+<section class="content-header">
+  <h1>
+		<% if content_for? :header %>
+			<%= yield  :header %>
+		<% end %>
+  </h1>
+	<ol class="breadcrumb">
+		<li><a href="/">Home</a></li>
+		<% if content_for? :breadcumb %>
+		<%= yield  :breadcumb %>
+		<% end %>
+	</ol>
+  
+  <% if content_for? :scopes %>
+    <div class='row' style='clear:both;'>
+      <div class='col-xs-12'>
+      	<%= yield  :scopes %>
+      </div>
+    </div>
+  <% end %>
+</section>
+
+<section class="content">
+	<% if content_for? :corpo %>
+		<%= yield  :corpo %>
+	<% end %>  
+</section>

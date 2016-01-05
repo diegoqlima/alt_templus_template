@@ -1,0 +1,17 @@
+<div class="middle-box text-center loginscreen  animated fadeInDown">
+	<h3 class="font-bold">Reenviar instruções de confirmação</h3>
+	<%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+		<%= flash_messages_error(f.object.errors) %>
+		<div class="form-group">
+			<%= f.input_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), :required => false, class:"form-control", :placeholder => "Email" %>
+		</div>
+		<%= f.button :submit, "Reenviar instruções de confirmação", class: 'btn btn-primary block full-width m-b' %>
+		<%= link_to new_usuario_session_path do %>
+			<small>Acesso ao sistema</small>
+		<% end %>
+		<br>
+		<%= link_to new_usuario_password_path do %>
+		  <small>Esqueci minha senha</small>
+		<% end %>
+	<% end %>
+</div>

@@ -1,0 +1,16 @@
+<h3 class="font-bold">Redefinição de senha</h3>
+<p>
+	Insira sua nova senha
+</p>
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+	<%= flash_messages_error(f.object.errors) %>
+	<%= f.input :reset_password_token, :as => :hidden %>
+	<%= f.full_error :reset_password_token %>
+	<div class="form-group">
+		<%= f.input_field :password, :required => false, class:"form-control", :placeholder => "Senha" %>
+	</div>
+	<div class="form-group">
+		<%= f.input_field :password_confirmation, :required => false, class:"form-control", :placeholder => "Confirmação de senha" %>
+	</div>
+	<%= f.button :submit, "Salvar nova senha", class: 'btn btn-primary block full-width m-b' %>
+<% end %>

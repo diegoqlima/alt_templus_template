@@ -1,0 +1,19 @@
+<h3 class="font-bold">Esqueceu sua senha?</h3>
+<p>
+	Digite seu endereço de e-mail para receber instruções de redefinição de senha.
+</p>
+<%= simple_form_for(resource, :as => resource_name, url: usuario_password_path) do |f| %>
+	<%= flash_messages_error(f.object.errors) %>
+	<%= f.full_error :reset_password_token %>
+	<div class="form-group">
+		<%= f.input_field :email, :required => false, class:"form-control", :placeholder => "Email" %>
+	</div>
+	<%= f.button :submit, "Envie-me instruções redefinir senhas", class: 'btn btn-primary block full-width m-b' %>
+	<%= link_to new_usuario_session_path do %>
+		<small>Acesso ao sistema</small>
+	<% end %>
+	<br>
+	<%= link_to new_usuario_registration_path do %>
+		<small>Registrar</small>
+	<% end %>
+<% end %>

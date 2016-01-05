@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title><%=Templus.nome_aplicacao%> | <%=Templus.nome_empresa%> </title>
+</head>
+<body>
+	<table width="600" cellspacing="0" cellpadding="10" align="center">
+		<tbody>
+			<tr>
+				<td><%=Templus.nome_aplicacao%></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table width="600" cellspacing="10" cellpadding="0" bgcolor="#fafafa" align="center">
+		<tbody>
+			<tr>
+				<td align="left">
+					<h2>Seja bem vindo!</h2>
+					<br><br>
+					Clique no link abaixo para confirmar sua conta para começar a acesso.<br><br>
+					<%= link_to 'Confirmar conta', confirmation_url(@resource, confirmation_token: @token) %>
+					<br><br>
+				</span>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
