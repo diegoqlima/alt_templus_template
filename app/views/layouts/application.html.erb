@@ -39,11 +39,15 @@
       
       <%= render 'layouts/menu' %>
       
-      <div class="content-wrapper <%= @extra_class %>">
-        <%= flash_messages_for %>
+      <section class="content">
+				<div class="content-wrapper <%= @extra_class %>">
+	        <%= flash_messages_for %>
         
-        <%= yield %>
-      </div>
+	        <div id="page-wrapper-main">
+						<%= yield %>
+					</div>
+	      </div>
+			</section>
       
       <%= render 'layouts/footer' %>
   	</div>

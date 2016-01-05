@@ -30,11 +30,11 @@ module MenuHelper
       modelo = classe.name.underscore
       url = "/crud/#{modelo}"
       buffer = ""
-      buffer << "<li class='menu #{is_active_crud(modelo)}'>"
+      buffer << "<li class='#{is_active_crud(modelo)}'>"
       if parent
         buffer << link_to("<i class='#{icon}'></i> <span>#{nome}</span>".html_safe, url, data: {push: true, crumb: 'wielka'})
       else
-        buffer << link_to("<i class='#{icon}'></i> #{nome}".html_safe, url, data: {push: true, crumb: 'wielka'})
+        buffer << link_to("<i class='#{icon}'></i> <span>#{nome}</span>".html_safe, url, data: {push: true, crumb: 'wielka'})
       end
       buffer << "</li>"
       buffer.html_safe
@@ -44,11 +44,11 @@ module MenuHelper
   def menu_helper(classe, controller, action, url, nome, icone='', parent=false)
    if can?(:read, classe)
       buffer = ""
-  		buffer << "<li class='menu #{is_active(controller, action)}'>"
+  		buffer << "<li class='#{is_active(controller, action)}'>"
       if parent
         buffer << link_to("<i class='#{icone}'></i> <span>#{nome}</span>".html_safe, url, data: {push: true, crumb: 'wielka'})
       else
-        buffer << link_to("<i class='#{icone}'></i> #{nome}".html_safe, url, data: {push: true, crumb: 'wielka'})
+        buffer << link_to("<i class='#{icone}'></i> <span>#{nome}</span>".html_safe, url, data: {push: true, crumb: 'wielka'})
       end
       buffer << "</li>"
       buffer.html_safe
@@ -58,13 +58,13 @@ module MenuHelper
   def menu_parent(modelos, controllers, nome, icone='', parent=false, &block)
     if is_can?(:read, modelos)
       buffer = ""
-      buffer << "<li class='parent-menu #{is_active_parent(controllers)}'>"
-      if parent
-        buffer << "<a><i class='#{icone}'></i> <span>#{nome}</span><span class='fa arrow'></span></a>".html_safe
-      else
-        buffer << "<a><i class='#{icone}'></i> #{nome}<span class='fa arrow'></span></a>".html_safe
-      end
-      buffer << "<ul class='nav nav-second-level collapse'>"
+      buffer << "<li class='treeview #{is_active_parent(controllers)}'>"
+      # if parent
+        buffer << "<a><i class='#{icone}'></i> <span>#{nome}</span><i class='fa fa-angle-left pull-right'></i></a>".html_safe
+      # else
+#         buffer << "<a><i class='#{icone}'></i> #{nome}<span class='fa arrow'></span></a>".html_safe
+#       end
+      buffer << "<ul class='treeview-menu' style='display: none;'>"
       buffer << capture(&block)
       buffer << "</ul>"
       buffer << "</li>"

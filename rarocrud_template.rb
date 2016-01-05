@@ -1,4 +1,4 @@
-path = "/Users/diegoqlima/projetos/rarocrud_template"
+path = "/Users/diegolima/Documents/rarocrud_template"
 generate "controller", "home index"
 remove_file "app/assets/javascripts/application.js"
 remove_file "app/assets/stylesheets/application.css"
@@ -6,16 +6,13 @@ remove_file "app/controllers/application_controller.rb"
 remove_file "app/views/layouts/application.html.erb"
 remove_file "db/seeds.rb"
 remove_file "config/initializers/inflections.rb"
+remove_file "config/initializers/assets.rb"
 remove_file "config/routes.rb"
 
 directory "#{path}/app/", "app"
 directory "#{path}/vendor/", "vendor"
 directory "#{path}/db/", "db"
 directory "#{path}/config/", "config"
-directory "#{path}/lib/", "lib"
-
-
-
 
 inject_into_file 'config/application.rb', :after => 
 "config.i18n.default_locale = :de\n" do 

@@ -23,8 +23,8 @@
  *= require chosen/chosen.css
  *= require ckeditor/contents.css
  *= require style
+ *= require _all-skins
  *= require crud
- *= require nested_form
  */
 
 .actions {
@@ -40,4 +40,8 @@
 .checkbox-permission {
 	margin-top: 0px !important;
 	margin-bottom: 0px !important;
+}
+
+.skin-blue .wrapper {
+  background-color: white;
 }

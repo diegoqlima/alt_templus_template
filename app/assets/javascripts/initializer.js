@@ -23,13 +23,13 @@ function atualiza_campos_crud(){
 		autoclose: true
 	});
 	
-	$("input.mask-telefone-ddd").mask(celphonedddMask, {onKeyPress: function(val, e, field, options) {
-			field.mask(celphonedddMask.apply({}, arguments), options);
-	}});
-	$("input.mask-telefone").mask(celphoneMask, {onKeyPress: function(val, e, field, options) {
-		field.mask(celphoneMask.apply({}, arguments), options);
-	}});
-	
+	// $("input.mask-telefone-ddd").mask(celphonedddMask, {onKeyPress: function(val, e, field, options) {
+//       field.mask(celphonedddMask.apply({}, arguments), options);
+//   }});
+//   $("input.mask-telefone").mask(celphoneMask, {onKeyPress: function(val, e, field, options) {
+//     field.mask(celphoneMask.apply({}, arguments), options);
+//   }});
+//
 	$(".timepicker").timepicker({
 		minuteStep: 5,
 		showInputs: false,
