@@ -32,7 +32,6 @@
 //= require chartjs/Chart.min.js
 //= require jsKnob/jquery.knob.js
 //= require jquery.mask/jquery.mask.js
-//= require jquery.mask/inputmask.js
 //= require mensagens.js
 //= require permissoes.js
 //= require initializer.js
