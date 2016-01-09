@@ -1,12 +1,12 @@
 class Templus
-  @@nome_aplicacao = "Entre a Gente"
-  @@nome_empresa = "Entre a Gente"
+  @@nome_aplicacao = "RaroCrud"
+  @@nome_empresa = "RaroCrud"
   @@logo = 'logo_simples.png'
   @@logo_menor = 'logo_menor.png'
   @@logo_rodape = 'raro_azul.png'
   @@logo_landpage = 'logo.png'
   @@favicon = 'favicon.ico'
-  @@paragrafo_login = ""
+  @@paragrafo_login = "Bem-vindo(a) ao RaroCrud"
 
   def self.nome_aplicacao
     @@nome_aplicacao
