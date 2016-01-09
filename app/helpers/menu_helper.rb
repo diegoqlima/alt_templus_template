@@ -30,7 +30,7 @@ module MenuHelper
       modelo = classe.name.underscore
       url = "/crud/#{modelo}"
       buffer = ""
-      buffer << "<li class='#{is_active_crud(modelo)}'>"
+      buffer << "<li class='menu #{is_active_crud(modelo)}'>"
       if parent
         buffer << link_to("<i class='#{icon}'></i> <span>#{nome}</span>".html_safe, url, data: {push: true, crumb: 'wielka'})
       else
@@ -44,7 +44,7 @@ module MenuHelper
   def menu_helper(classe, controller, action, url, nome, icone='', parent=false)
    if can?(:read, classe)
       buffer = ""
-  		buffer << "<li class='#{is_active(controller, action)}'>"
+  		buffer << "<li class='menu #{is_active(controller, action)}'>"
       if parent
         buffer << link_to("<i class='#{icone}'></i> <span>#{nome}</span>".html_safe, url, data: {push: true, crumb: 'wielka'})
       else
