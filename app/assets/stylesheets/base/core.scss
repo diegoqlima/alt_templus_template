@@ -129,6 +129,9 @@ body.hold-transition {
   min-height: 250px;
   padding: 15px;
   @include container-fixed($grid-gutter-width);
+  .wrapper{
+    background-color:transparent!important;
+  }
 }
 
 /* H1 - H6 font */
