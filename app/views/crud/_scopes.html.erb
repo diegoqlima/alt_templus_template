@@ -1,0 +1,18 @@
+<% if @crud_helper.scopes.present? %>
+  <% if @crud_helper.scopes.class == Array %>
+    <% @crud_helper.scopes.each do |escopo| %>
+      <%= link_to "/crud/#{@model.name.underscore}?scope=#{escopo[0]}", id: "#{escopo[0]}", data: {push: true, crumb: 'wielka'}, class: "btn btn-app" do%>
+        <span class="badge bg-green">
+          <% if current_usuario.present? %>
+            <%= @model.send(escopo[0]).accessible_by(current_ability, :read).count %>
+          <% else %>
+            <%= @model.send(escopo[0]).count %>
+          <% end %>
+        </span>
+        <p><%= escopo[1] %></p>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= render @crud_helper.scopes %>
+  <% end %>
+<% end %>
