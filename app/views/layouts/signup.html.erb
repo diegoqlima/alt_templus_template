@@ -13,17 +13,6 @@
   	<!-- Main javascript files -->
   	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   	<%= csrf_meta_tags %>
-  
-    <!-- Bootstrap 3.3.5 -->
-    <!-- <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css"> -->
-    <!-- Font Awesome -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
-    <!-- Ionicons -->
-    <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
-    <!-- Theme style -->
-    <!-- <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css"> -->
-    <!-- iCheck -->
-    <!-- <link rel="stylesheet" href="../../plugins/iCheck/square/blue.css"> -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -35,8 +24,7 @@
     <%= flash_messages_for %>
     <div class="register-box">
       <div class="register-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE</a>
-        <%#=image_tag(Templus.logo_landpage, class: 'img-responsive')%>
+        <%= image_tag(Templus.logo_landpage)%>
       </div>
 
       <div class="register-box-body">
@@ -66,32 +54,18 @@
           </div>  
   			<% end %>
         
-        <div class="social-auth-links text-center">
+        <!-- <div class="social-auth-links text-center">
           <p>- OU -</p>
-    			<%= link_to usuario_omniauth_authorize_path(:facebook), class: 'btn btn-block btn-social btn-facebook btn-flat' do %>
-    				<i class='fa fa-facebook'></i> Registro via Facebook
-    			<% end %>
-        </div>
-        
-  			<%= link_to 'Acesso ao sistema', new_usuario_session_path, class: 'text-center' %>
+          <%#= link_to usuario_omniauth_authorize_path(:facebook), class: 'btn btn-block btn-social btn-facebook btn-flat' do %>
+            <i class='fa fa-facebook'></i> Registro via Facebook
+          <%# end %>
+        </div> -->
+      </div>
+      <div class="register-box-footer">
+        <%= link_to 'Acesso ao sistema', new_usuario_session_path %>
       </div>
     </div>
 
-    <!-- jQuery 2.1.4 -->
-    <!-- <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script> -->
-    <!-- Bootstrap 3.3.5 -->
-    <!-- <script src="../../bootstrap/js/bootstrap.min.js"></script> -->
-    <!-- iCheck -->
-    <!-- <script src="../../plugins/iCheck/icheck.min.js"></script> -->
-    <!-- <script>
-      $(function () {
-        $('input').iCheck({
-          checkboxClass: 'icheckbox_square-blue',
-          radioClass: 'iradio_square-blue',
-          increaseArea: '20%' optional
-        });
-      });
-    </script> -->
     <!-- Include javascript per-controller - vendor plugins -->
     <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>
 
