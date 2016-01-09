@@ -13,17 +13,6 @@
   	<!-- Main javascript files -->
   	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   	<%= csrf_meta_tags %>
-  
-    <!-- Bootstrap 3.3.5 -->
-    <!-- <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css"> -->
-    <!-- Font Awesome -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
-    <!-- Ionicons -->
-    <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
-    <!-- Theme style -->
-    <!-- <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css"> -->
-    <!-- iCheck -->
-    <!-- <link rel="stylesheet" href="../../plugins/iCheck/square/blue.css"> -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -35,11 +24,12 @@
     <%= flash_messages_for %>
     <div class="login-box">
       <div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE</a>
-        <%#=image_tag(Templus.logo_landpage, class: 'img-responsive')%>
+        <%= image_tag(Templus.logo_landpage)%>
       </div>
       <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">
+          <%= Templus.paragrafo_login %>
+        </p>
   			
         <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     			<div class="form-group">
@@ -65,23 +55,11 @@
           </div> -->
 				<% end %>
       </div>
+      <div class="login-box-footer">
+        <small>RaroLabs © 2010-<%= Date.today.year %></small>
+      </div>
     </div>
 
-    <!-- jQuery 2.1.4 -->
-    <!-- <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script> -->
-    <!-- Bootstrap 3.3.5 -->
-    <!-- <script src="../../bootstrap/js/bootstrap.min.js"></script> -->
-    <!-- iCheck -->
-    <!-- <script src="../../plugins/iCheck/icheck.min.js"></script> -->
-    <!-- <script>
-      $(function () {
-        $('input').iCheck({
-          checkboxClass: 'icheckbox_square-blue',
-          radioClass: 'iradio_square-blue',
-          increaseArea: '20%' optional
-        });
-      });
-    </script> -->
     <!-- Include javascript per-controller - vendor plugins -->
     <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>
 
