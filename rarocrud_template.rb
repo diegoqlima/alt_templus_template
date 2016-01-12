@@ -50,7 +50,7 @@ gem 'wiselinks'
 gem 'sidekiq'
 
 #rarocrud
-gem 'templus_models', "1.5.10"
+gem 'templus_models', "1.5.11"
 gem 'carrierwave'
 gem 'rmagick'
 gem 'summernote-rails'
