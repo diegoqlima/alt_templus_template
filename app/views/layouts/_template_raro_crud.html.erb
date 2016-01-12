@@ -21,5 +21,8 @@
 <section class="content">
   <% if content_for? :corpo %>
     <%= yield  :corpo %>
-  <% end %>  
+  <% end %>
 </section>
+<% if content_for? :modal %>
+  <%= yield  :modal %>
+<% end %>
