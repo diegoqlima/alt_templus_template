@@ -41,7 +41,15 @@
 
   .ibox-title, .ibox-content{
     @include clearfix();
-    padding: 10px;
+  }
+  
+  .ibox-title{
+    padding: 5px 10px;
+    border-bottom: 1px solid $box-default-border-top-color;;
+  }
+  
+  .ibox-content{
+    padding: 15px 20px 20px 20px;
   }
 
   .nav-stacked {
