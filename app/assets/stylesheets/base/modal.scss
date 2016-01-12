@@ -15,6 +15,15 @@
 }
 .modal-header {
   border-bottom-color: $box-border-color;
+  padding: 30px 15px;
+  text-align: center;
+  .modal-icon{
+    font-size: 84px;
+    color: $gray;
+  }
+  .modal-title{
+    font-size: 26px;
+  }
 }
 .modal-footer {
   border-top-color: $box-border-color;
