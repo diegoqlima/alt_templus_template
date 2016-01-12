@@ -1,28 +1,33 @@
-<section class="content-header">
-  <h1>
-    <% if content_for? :header %>
-      <%= yield  :header %>
-    <% end %>
-  </h1>
-  <ol class="breadcrumb">
-    <li><a href="/">Home</a></li>
-    <% if content_for? :breadcumb %>
-      <%= yield  :breadcumb %>
-    <% end %>
-  </ol>
+<%unless params[:render] == 'modal'%>
+  <section class="content-header">
+    <h1>
+      <% if content_for? :header %>
+        <%= yield  :header %>
+      <% end %>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <% if content_for? :breadcumb %>
+        <%= yield  :breadcumb %>
+      <% end %>
+    </ol>
   
-  <% if content_for? :scopes %>
-  <div class='row m-t-md'>
-    <%= yield  :scopes %>
-  </div>
-  <% end %>
-</section>
-
-<section class="content">
+    <% if content_for? :scopes %>
+    <div class='row m-t-md'>
+      <%= yield  :scopes %>
+    </div>
+    <% end %>
+  </section>
+  <section class="content">
+    <% if content_for? :corpo %>
+      <%= yield  :corpo %>
+    <% end %>
+  </section>
+<% else %>
   <% if content_for? :corpo %>
     <%= yield  :corpo %>
   <% end %>
-</section>
+<% end %>
 <% if content_for? :modal %>
   <%= yield  :modal %>
 <% end %>

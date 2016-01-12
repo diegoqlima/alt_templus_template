@@ -32,6 +32,7 @@
 //= require chartjs/Chart.min.js
 //= require jsKnob/jquery.knob.js
 //= require jquery.mask/jquery.mask.js
+//= require raro_crud.js
 //= require mensagens.js
 //= require permissoes.js
 //= require initializer.js
