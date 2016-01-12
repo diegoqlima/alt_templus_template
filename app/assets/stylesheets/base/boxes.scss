@@ -39,6 +39,11 @@
     }
   }
 
+  .ibox-title, .ibox-content{
+    @include clearfix();
+    padding: 10px;
+  }
+
   .nav-stacked {
     > li {
       border-bottom: 1px solid $box-border-color;
